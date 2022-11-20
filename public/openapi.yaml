@@ -4,7 +4,7 @@ info:
   description: 'Crawl from Nettruyen'
   contact:
     name: GingTeam
-    url: 'https://facebook.com/gingdev'
+    url: 'https://github.com/gingteam/nettruyen'
   version: '1.0'
 paths:
   /detail:
