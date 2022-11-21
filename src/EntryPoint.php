@@ -10,8 +10,8 @@ use OpenApi\Attributes\Tag;
     description: 'Crawl from Nettruyen',
     contact: new Contact('GingTeam', 'https://github.com/gingteam/nettruyen')
 )]
-#[Tag('Read')]
-#[Tag('Detail')]
+#[Tag('Read', description: 'Get the list of images of the link')]
+#[Tag('Detail', description: 'Get information of link')]
 class EntryPoint
 {
 }
