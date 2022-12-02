@@ -15,7 +15,9 @@ class ProxyController
         $url = $request->getAttribute('url');
         $browser = new Browser();
 
-        return $browser->requestStreaming('GET', $url)->then(function (ResponseInterface $response) {
+        return $browser->requestStreaming('GET', $url, [
+            'referer' => 'https://hentaivn.in/',
+        ])->then(function (ResponseInterface $response) {
             return new Response(body: $response->getBody());
         })->catch(function (ResponseException $e) {
             return (new ErrorHandler())->requestNotFound();
