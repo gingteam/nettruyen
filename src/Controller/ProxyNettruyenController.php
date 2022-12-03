@@ -8,7 +8,7 @@ use React\Http\Message\Response;
 use React\Http\Message\ResponseException;
 use React\Promise\PromiseInterface;
 
-class ProxyController
+class ProxyNettruyenController
 {
     public function __invoke(ServerRequestInterface $request): PromiseInterface|ResponseInterface
     {
@@ -16,7 +16,7 @@ class ProxyController
         $browser = new Browser();
 
         return $browser->requestStreaming('GET', $url, [
-            'referer' => 'https://hentaivn.in/',
+            'referer' => 'https://www.nettruyentv.com/',
         ])->then(function (ResponseInterface $response) {
             return new Response(body: $response->getBody());
         })->catch(function (ResponseException $e) {
