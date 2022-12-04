@@ -159,19 +159,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "ff0bfc39c3cce1cc0aa69471235194c6f104384d"
+                "reference": "241097b518e54cc24b7d7dba2f1e5e7990b5c35d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/ff0bfc39c3cce1cc0aa69471235194c6f104384d",
-                "reference": "ff0bfc39c3cce1cc0aa69471235194c6f104384d",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/241097b518e54cc24b7d7dba2f1e5e7990b5c35d",
+                "reference": "241097b518e54cc24b7d7dba2f1e5e7990b5c35d",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^9.0",
+                "doctrine/coding-standard": "^9 || ^10",
                 "phpstan/phpstan": "^1.3",
                 "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
                 "vimeo/psalm": "^4.11"
@@ -227,7 +227,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-28T11:12:09+00:00"
+            "time": "2022-11-29T15:45:42+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -680,12 +680,8 @@
             },
             "funding": [
                 {
-                    "url": "https://github.com/WyriHaximus",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/clue",
-                    "type": "github"
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
                 }
             ],
             "time": "2022-10-29T17:55:54+00:00"
@@ -696,12 +692,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/cache.git",
-                "reference": "bc120f30778f396ca9b73ff68cc2990e45ca8768"
+                "reference": "d47c472b64aa5608225f47965a484b75c7817d5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/cache/zipball/bc120f30778f396ca9b73ff68cc2990e45ca8768",
-                "reference": "bc120f30778f396ca9b73ff68cc2990e45ca8768",
+                "url": "https://api.github.com/repos/reactphp/cache/zipball/d47c472b64aa5608225f47965a484b75c7817d5b",
+                "reference": "d47c472b64aa5608225f47965a484b75c7817d5b",
                 "shasum": ""
             },
             "require": {
@@ -753,7 +749,7 @@
             ],
             "support": {
                 "issues": "https://github.com/reactphp/cache/issues",
-                "source": "https://github.com/reactphp/cache/tree/1.x"
+                "source": "https://github.com/reactphp/cache/tree/v1.2.0"
             },
             "funding": [
                 {
@@ -761,7 +757,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2022-11-14T13:45:07+00:00"
+            "time": "2022-11-30T15:59:55+00:00"
         },
         {
             "name": "react/dns",
@@ -921,12 +917,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/http.git",
-                "reference": "383f9849c3a2eb2f546417dfc9506379e29c5b76"
+                "reference": "ce16c021e7fbb68f38bad71b821c83156a86edfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/http/zipball/383f9849c3a2eb2f546417dfc9506379e29c5b76",
-                "reference": "383f9849c3a2eb2f546417dfc9506379e29c5b76",
+                "url": "https://api.github.com/repos/reactphp/http/zipball/ce16c021e7fbb68f38bad71b821c83156a86edfe",
+                "reference": "ce16c021e7fbb68f38bad71b821c83156a86edfe",
                 "shasum": ""
             },
             "require": {
@@ -936,7 +932,6 @@
                 "psr/http-message": "^1.0",
                 "react/event-loop": "^1.2",
                 "react/promise": "^3 || ^2.3 || ^1.2.1",
-                "react/promise-stream": "^1.4",
                 "react/socket": "^1.12",
                 "react/stream": "^1.2",
                 "ringcentral/psr7": "^1.2"
@@ -947,6 +942,7 @@
                 "clue/socks-react": "^1.4",
                 "phpunit/phpunit": "^9.5 || ^5.7 || ^4.8.35",
                 "react/async": "^4 || ^3 || ^2",
+                "react/promise-stream": "^1.4",
                 "react/promise-timer": "^1.9"
             },
             "default-branch": true,
@@ -1006,7 +1002,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2022-11-17T17:19:37+00:00"
+            "time": "2022-11-29T19:32:45+00:00"
         },
         {
             "name": "react/promise",
@@ -1080,86 +1076,6 @@
                 }
             ],
             "time": "2022-11-19T13:05:42+00:00"
-        },
-        {
-            "name": "react/promise-stream",
-            "version": "1.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/reactphp/promise-stream.git",
-                "reference": "63a904b7920a907f2f2b72c80ed05b1c2eb214dd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise-stream/zipball/63a904b7920a907f2f2b72c80ed05b1c2eb214dd",
-                "reference": "63a904b7920a907f2f2b72c80ed05b1c2eb214dd",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3",
-                "react/promise": "^3 || ^2.1 || ^1.2",
-                "react/stream": "^1.0 || ^0.7 || ^0.6 || ^0.5 || ^0.4.6"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.5 || ^5.7 || ^4.8.35"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/functions_include.php"
-                ],
-                "psr-4": {
-                    "React\\Promise\\Stream\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Lück",
-                    "email": "christian@clue.engineering",
-                    "homepage": "https://clue.engineering/"
-                },
-                {
-                    "name": "Cees-Jan Kiewiet",
-                    "email": "reactphp@ceesjankiewiet.nl",
-                    "homepage": "https://wyrihaximus.net/"
-                },
-                {
-                    "name": "Jan Sorgalla",
-                    "email": "jsorgalla@gmail.com",
-                    "homepage": "https://sorgalla.com/"
-                },
-                {
-                    "name": "Chris Boden",
-                    "email": "cboden@gmail.com",
-                    "homepage": "https://cboden.dev/"
-                }
-            ],
-            "description": "The missing link between Promise-land and Stream-land for ReactPHP",
-            "homepage": "https://github.com/reactphp/promise-stream",
-            "keywords": [
-                "Buffer",
-                "async",
-                "promise",
-                "reactphp",
-                "stream",
-                "unwrap"
-            ],
-            "support": {
-                "issues": "https://github.com/reactphp/promise-stream/issues",
-                "source": "https://github.com/reactphp/promise-stream/tree/1.x"
-            },
-            "funding": [
-                {
-                    "url": "https://opencollective.com/reactphp",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2022-11-14T13:46:46+00:00"
         },
         {
             "name": "react/promise-timer",
@@ -1316,12 +1232,8 @@
             },
             "funding": [
                 {
-                    "url": "https://github.com/WyriHaximus",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/clue",
-                    "type": "github"
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
                 }
             ],
             "time": "2022-10-29T18:51:41+00:00"
@@ -1537,12 +1449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "4912000e79dc2d6df029d35d8755be1ed79b6691"
+                "reference": "dc6c2f7633f6ed7d518c285f5772fff7fdf815e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/4912000e79dc2d6df029d35d8755be1ed79b6691",
-                "reference": "4912000e79dc2d6df029d35d8755be1ed79b6691",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/dc6c2f7633f6ed7d518c285f5772fff7fdf815e7",
+                "reference": "dc6c2f7633f6ed7d518c285f5772fff7fdf815e7",
                 "shasum": ""
             },
             "require": {
@@ -1597,7 +1509,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-20T13:56:22+00:00"
+            "time": "2022-07-29T11:13:32+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1671,7 +1583,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "6.2.x-dev",
+            "version": "6.3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -1715,7 +1627,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/6.2"
+                "source": "https://github.com/symfony/finder/tree/v6.2.0-BETA1"
             },
             "funding": [
                 {
@@ -1902,16 +1814,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "6.2.x-dev",
+            "version": "6.3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "d3cf3434b78f0ad3df846cebc552f745d01d90ee"
+                "reference": "f2570f21bd4adc3589aa3133323273995109bae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/d3cf3434b78f0ad3df846cebc552f745d01d90ee",
-                "reference": "d3cf3434b78f0ad3df846cebc552f745d01d90ee",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/f2570f21bd4adc3589aa3133323273995109bae0",
+                "reference": "f2570f21bd4adc3589aa3133323273995109bae0",
                 "shasum": ""
             },
             "require": {
@@ -1972,7 +1884,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-14T09:35:55+00:00"
+            "time": "2022-11-25T19:00:27+00:00"
         },
         {
             "name": "zircote/swagger-php",
@@ -2061,12 +1973,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "4156615f3aca770df667df837c02efbeb2eadced"
+                "reference": "5132ec36332ddd7ca944d2a5caf800698e6ea6fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/4156615f3aca770df667df837c02efbeb2eadced",
-                "reference": "4156615f3aca770df667df837c02efbeb2eadced",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/5132ec36332ddd7ca944d2a5caf800698e6ea6fc",
+                "reference": "5132ec36332ddd7ca944d2a5caf800698e6ea6fc",
                 "shasum": ""
             },
             "require": {
@@ -2113,7 +2025,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-20T08:51:10+00:00"
+            "time": "2022-12-04T08:34:49+00:00"
         }
     ],
     "aliases": [],

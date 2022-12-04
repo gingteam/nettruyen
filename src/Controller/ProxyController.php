@@ -7,15 +7,17 @@ use React\Http\Browser;
 use React\Http\Message\Response;
 use React\Promise\PromiseInterface;
 
-class ProxyHentaiVNController
+class ProxyController
 {
     public function __invoke(ServerRequestInterface $request): PromiseInterface|ResponseInterface
     {
         $url = $request->getAttribute('url');
+        $referer = $request->getAttribute('referer');
+
         $browser = new Browser();
 
         return $browser->requestStreaming('GET', $url, [
-            'referer' => 'https://hentaivn.in/',
+            'referer' => $referer,
         ])->then(function (ResponseInterface $response) {
             return new Response(body: $response->getBody());
         })->catch(function () {
