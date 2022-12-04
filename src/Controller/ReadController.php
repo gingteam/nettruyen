@@ -11,7 +11,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use React\Http\Browser;
 use React\Http\Message\Response;
-use React\Http\Message\ResponseException;
 use React\Promise\PromiseInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -63,8 +62,7 @@ class ReadController
             array_shift($images);
 
             return Response::json($images);
-        })->catch(function (ResponseException $e) {
-            echo $e->getMessage();
+        })->catch(function () {
             return (new ErrorHandler())->requestNotFound();
         });
     }

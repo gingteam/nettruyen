@@ -5,7 +5,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use React\Http\Browser;
 use React\Http\Message\Response;
-use React\Http\Message\ResponseException;
 use React\Promise\PromiseInterface;
 
 class ProxyNettruyenController
@@ -19,7 +18,7 @@ class ProxyNettruyenController
             'referer' => 'https://www.nettruyentv.com/',
         ])->then(function (ResponseInterface $response) {
             return new Response(body: $response->getBody());
-        })->catch(function (ResponseException $e) {
+        })->catch(function () {
             return (new ErrorHandler())->requestNotFound();
         });
     }
