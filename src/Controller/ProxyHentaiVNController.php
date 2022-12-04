@@ -5,10 +5,9 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use React\Http\Browser;
 use React\Http\Message\Response;
-use React\Http\Message\ResponseException;
 use React\Promise\PromiseInterface;
 
-class ProxyController
+class ProxyHentaiVNController
 {
     public function __invoke(ServerRequestInterface $request): PromiseInterface|ResponseInterface
     {
@@ -19,7 +18,7 @@ class ProxyController
             'referer' => 'https://hentaivn.in/',
         ])->then(function (ResponseInterface $response) {
             return new Response(body: $response->getBody());
-        })->catch(function (ResponseException $e) {
+        })->catch(function () {
             return (new ErrorHandler())->requestNotFound();
         });
     }

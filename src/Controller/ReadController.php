@@ -24,10 +24,10 @@ class ReadController
             new Parameter(
                 name: 'url',
                 description: 'URL',
-                example: 'https://www.nettruyenin.com/truyen-tranh/vo-luyen-dinh-phong/chap-2793/929207',
-                required: true,
                 in: 'query',
-                schema: new Schema(type: 'string')
+                required: true,
+                schema: new Schema(type: 'string'),
+                example: 'https://www.nettruyenin.com/truyen-tranh/vo-luyen-dinh-phong/chap-2793/929207'
             ),
         ],
         responses: [
@@ -37,8 +37,8 @@ class ReadController
                 content: new JsonContent(
                     type: 'array',
                     items: new Items(
-                        type: 'string',
-                        description: 'Link of image'
+                        description: 'Link of image',
+                        type: 'string'
                     ),
                 )
             ),
