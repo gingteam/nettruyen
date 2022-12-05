@@ -19,7 +19,12 @@ class ProxyController
         return $browser->requestStreaming('GET', $url, [
             'referer' => $referer,
         ])->then(function (ResponseInterface $response) {
-            return new Response(body: $response->getBody());
+            return new Response(
+                headers: [
+                    'Content-Type' => 'image/jpg',
+                ],
+                body: $response->getBody()
+            );
         })->catch(function () {
             return (new ErrorHandler())->requestNotFound();
         });
