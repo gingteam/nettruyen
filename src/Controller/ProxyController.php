@@ -11,14 +11,19 @@ class ProxyController
 {
     public function __invoke(ServerRequestInterface $request): PromiseInterface|ResponseInterface
     {
+        /** @var string */
         $url = $request->getAttribute('url');
-        $referer = $request->getAttribute('referer');
+
+        /** @var array<string, string> */
+        $headers = $request->getAttribute('headers');
 
         $browser = new Browser();
 
-        return $browser->requestStreaming('GET', $url, [
-            'referer' => $referer,
-        ])->then(function (ResponseInterface $response) {
+        return $browser->requestStreaming(
+            method: 'GET',
+            url: $url,
+            headers: $headers,
+        )->then(function (ResponseInterface $response) {
             return new Response(
                 headers: [
                     'Content-Type' => 'image/jpg',

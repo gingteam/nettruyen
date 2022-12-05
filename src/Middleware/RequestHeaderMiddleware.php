@@ -3,17 +3,24 @@
 use Psr\Http\Message\ServerRequestInterface;
 use React\Promise\PromiseInterface;
 
-class RefererMiddleware
+class RequestHeaderMiddleware
 {
     public function __invoke(ServerRequestInterface $request, callable $next): PromiseInterface
     {
+        $headers = [];
         $site = $request->getAttribute('site');
+
         $referer = match ($site) {
             'hentaivn' => 'https://hentaivn.in/',
-            default => 'https://www.nettruyentv.com/'
+            'nettruyen' => 'https://www.nettruyentv.com/',
+            default => false
         };
 
-        $request = $request->withAttribute('referer', $referer);
+        if ($referer) {
+            $headers['referer'] = $referer;
+        }
+
+        $request = $request->withAttribute('headers', $headers);
 
         return $next($request);
     }

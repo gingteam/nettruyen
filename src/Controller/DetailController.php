@@ -77,6 +77,7 @@ class DetailController
     )]
     public function __invoke(ServerRequestInterface $request): ResponseInterface|PromiseInterface
     {
+        /** @var string */
         $url = $request->getAttribute('url');
         $browser = new Browser();
 

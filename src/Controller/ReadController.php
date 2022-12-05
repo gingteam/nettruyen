@@ -47,6 +47,7 @@ class ReadController
     )]
     public function __invoke(ServerRequestInterface $request): PromiseInterface
     {
+        /** @var string */
         $url = $request->getAttribute('url');
         $browser = new Browser();
 
