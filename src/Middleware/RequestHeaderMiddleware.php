@@ -11,7 +11,7 @@ class RequestHeaderMiddleware
         $site = $request->getAttribute('site');
 
         $referer = match ($site) {
-            'hentaivn' => 'https://hentaivn.in/',
+            'hentaivn' => 'https://hentaivn.life/',
             'nettruyen' => 'https://www.nettruyentv.com/',
             default => false
         };
