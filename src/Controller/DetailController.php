@@ -25,7 +25,7 @@ class DetailController
             new Parameter(
                 name: 'url',
                 description: 'URL',
-                example: 'https://www.nettruyenin.com/truyen-tranh/vo-luyen-dinh-phong-176960',
+                example: 'https://www.nettruyenking.com/truyen-tranh/vo-luyen-dinh-phong-176960',
                 required: true,
                 in: 'query',
                 schema: new Schema(type: 'string')

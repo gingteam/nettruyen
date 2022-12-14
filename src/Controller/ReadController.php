@@ -27,7 +27,7 @@ class ReadController
                 in: 'query',
                 required: true,
                 schema: new Schema(type: 'string'),
-                example: 'https://www.nettruyenin.com/truyen-tranh/vo-luyen-dinh-phong/chap-2793/929207'
+                example: 'https://www.nettruyenking.com/truyen-tranh/vo-luyen-dinh-phong/chap-2793/929207'
             ),
         ],
         responses: [
