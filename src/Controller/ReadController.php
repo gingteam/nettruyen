@@ -14,40 +14,40 @@ use React\Http\Message\Response;
 use React\Promise\PromiseInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
+#[Get(
+    path: '/read',
+    description: 'Returns the list of paths of the images',
+    tags: ['Read'],
+    parameters: [
+        new Parameter(
+            name: 'url',
+            description: 'URL',
+            in: 'query',
+            required: true,
+            schema: new Schema(type: 'string'),
+            example: 'https://www.nettruyenin.com/truyen-tranh/vo-luyen-dinh-phong/chap-2793/929207'
+        ),
+    ],
+    responses: [
+        new OAResponse(
+            response: 200,
+            description: 'Return if successful',
+            content: new JsonContent(
+                type: 'array',
+                items: new Items(
+                    description: 'Link of image',
+                    type: 'string'
+                ),
+            )
+        ),
+        new OAResponse(response: 404, description: 'Return if failed'),
+    ]
+)]
 class ReadController
 {
     /**
      * @return PromiseInterface<Response>
      */
-    #[Get(
-        path: '/read',
-        description: 'Returns the list of paths of the images',
-        tags: ['Read'],
-        parameters: [
-            new Parameter(
-                name: 'url',
-                description: 'URL',
-                in: 'query',
-                required: true,
-                schema: new Schema(type: 'string'),
-                example: 'https://www.nettruyenin.com/truyen-tranh/vo-luyen-dinh-phong/chap-2793/929207'
-            ),
-        ],
-        responses: [
-            new OAResponse(
-                response: 200,
-                description: 'Return if successful',
-                content: new JsonContent(
-                    type: 'array',
-                    items: new Items(
-                        description: 'Link of image',
-                        type: 'string'
-                    ),
-                )
-            ),
-            new OAResponse(response: 404, description: 'Return if failed'),
-        ]
-    )]
     public function __invoke(ServerRequestInterface $request)
     {
         /** @var string */

@@ -1,6 +1,0 @@
-parameters:
-    level: 6
-    paths:
-        - src
-    stubFiles:
-        - stubs/PromiseInterface.php

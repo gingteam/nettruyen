@@ -15,69 +15,69 @@ use React\Http\Message\Response;
 use React\Promise\PromiseInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
+#[Get(
+    path: '/detail',
+    description: 'Return the list of episodes, detail of the story',
+    tags: ['Detail'],
+    parameters: [
+        new Parameter(
+            name: 'url',
+            description: 'URL',
+            example: 'https://www.nettruyenin.com/truyen-tranh/vo-luyen-dinh-phong-176960',
+            required: true,
+            in: 'query',
+            schema: new Schema(type: 'string')
+        ),
+    ],
+    responses: [
+        new OAResponse(
+            response: 200,
+            description: 'Return if successful',
+            content: new JsonContent(
+                type: 'array',
+                items: new Items(
+                    type: 'object',
+                    properties: [
+                        new Property(
+                            property: 'title',
+                            type: 'string'
+                        ),
+                        new Property(
+                            property: 'description',
+                            type: 'string'
+                        ),
+                        new Property(
+                            property: 'chapters',
+                            type: 'array',
+                            items: new Items(
+                                type: 'object',
+                                properties: [
+                                    new Property(
+                                        type: 'string',
+                                        property: 'name'
+                                    ),
+                                    new Property(
+                                        type: 'string',
+                                        property: 'url'
+                                    ),
+                                ]
+                            )
+                        ),
+                    ]
+                )
+            )
+        ),
+        new OAResponse(
+            response: 404,
+            description: 'Return if failed'
+        ),
+    ]
+)]
 class DetailController
 {
     /**
      * @return PromiseInterface<Response>
      */
-    #[Get(
-        path: '/detail',
-        description: 'Return the list of episodes, detail of the story',
-        tags: ['Detail'],
-        parameters: [
-            new Parameter(
-                name: 'url',
-                description: 'URL',
-                example: 'https://www.nettruyenin.com/truyen-tranh/vo-luyen-dinh-phong-176960',
-                required: true,
-                in: 'query',
-                schema: new Schema(type: 'string')
-            ),
-        ],
-        responses: [
-            new OAResponse(
-                response: 200,
-                description: 'Return if successful',
-                content: new JsonContent(
-                    type: 'array',
-                    items: new Items(
-                        type: 'object',
-                        properties: [
-                            new Property(
-                                property: 'title',
-                                type: 'string'
-                            ),
-                            new Property(
-                                property: 'description',
-                                type: 'string'
-                            ),
-                            new Property(
-                                property: 'chapters',
-                                type: 'array',
-                                items: new Items(
-                                    type: 'object',
-                                    properties: [
-                                        new Property(
-                                            type: 'string',
-                                            property: 'name'
-                                        ),
-                                        new Property(
-                                            type: 'string',
-                                            property: 'url'
-                                        ),
-                                    ]
-                                )
-                            ),
-                        ]
-                    )
-                )
-            ),
-            new OAResponse(
-                response: 404,
-                description: 'Return if failed'
-            ),
-        ]
-    )]
     public function __invoke(ServerRequestInterface $request)
     {
         /** @var string */
