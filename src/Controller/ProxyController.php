@@ -9,7 +9,10 @@ use React\Promise\PromiseInterface;
 
 class ProxyController
 {
-    public function __invoke(ServerRequestInterface $request): PromiseInterface|ResponseInterface
+    /**
+     * @return PromiseInterface<Response>
+     */
+    public function __invoke(ServerRequestInterface $request)
     {
         /** @var string */
         $url = $request->getAttribute('url');
@@ -30,7 +33,7 @@ class ProxyController
                 ],
                 body: $response->getBody()
             );
-        })->catch(function () {
+        }, function () {
             return (new ErrorHandler())->requestNotFound();
         });
     }

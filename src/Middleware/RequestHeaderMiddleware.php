@@ -5,14 +5,19 @@ use React\Promise\PromiseInterface;
 
 class RequestHeaderMiddleware
 {
-    public function __invoke(ServerRequestInterface $request, callable $next): PromiseInterface
+    /**
+     * @param ServerRequestInterface $request
+     * @param callable(ServerRequestInterface): PromiseInterface<ServerRequestInterface> $next
+     * @return PromiseInterface<ServerRequestInterface>
+     */
+    public function __invoke(ServerRequestInterface $request, callable $next)
     {
         $headers = [];
         $site = $request->getAttribute('site');
 
         $referer = match ($site) {
-            'hentaivn' => 'https://hentaivn.life/',
-            'nettruyen' => 'https://www.nettruyentv.com/',
+            'hentaivn' => 'https://hentaivn.de/',
+            'nettruyen' => 'https://www.nettruyenup.com/',
             default => false
         };
 

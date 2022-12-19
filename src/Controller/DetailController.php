@@ -17,6 +17,9 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class DetailController
 {
+    /**
+     * @return PromiseInterface<Response>
+     */
     #[Get(
         path: '/detail',
         description: 'Return the list of episodes, detail of the story',
@@ -75,7 +78,7 @@ class DetailController
             ),
         ]
     )]
-    public function __invoke(ServerRequestInterface $request): ResponseInterface|PromiseInterface
+    public function __invoke(ServerRequestInterface $request)
     {
         /** @var string */
         $url = $request->getAttribute('url');
@@ -98,7 +101,7 @@ class DetailController
                 });
 
             return Response::json(compact(['title', 'description', 'chapters']));
-        })->catch(function () {
+        }, function () {
             return (new ErrorHandler())->requestNotFound();
         });
     }

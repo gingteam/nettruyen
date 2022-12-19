@@ -16,6 +16,9 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class ReadController
 {
+    /**
+     * @return PromiseInterface<Response>
+     */
     #[Get(
         path: '/read',
         description: 'Returns the list of paths of the images',
@@ -45,7 +48,7 @@ class ReadController
             new OAResponse(response: 404, description: 'Return if failed'),
         ]
     )]
-    public function __invoke(ServerRequestInterface $request): PromiseInterface
+    public function __invoke(ServerRequestInterface $request)
     {
         /** @var string */
         $url = $request->getAttribute('url');
@@ -63,7 +66,7 @@ class ReadController
             array_shift($images);
 
             return Response::json($images);
-        })->catch(function () {
+        }, function () {
             return (new ErrorHandler())->requestNotFound();
         });
     }

@@ -7,7 +7,12 @@ use React\Promise\PromiseInterface;
 
 class FilterMiddleware
 {
-    public function __invoke(ServerRequestInterface $request, callable $next): ResponseInterface|PromiseInterface
+    /**
+     * @param ServerRequestInterface $request
+     * @param callable(ServerRequestInterface): PromiseInterface<ServerRequestInterface> $next
+     * @return ResponseInterface|PromiseInterface<ServerRequestInterface>
+     */
+    public function __invoke(ServerRequestInterface $request, callable $next)
     {
         $url = $request->getQueryParams()['url'] ?? '';
 
